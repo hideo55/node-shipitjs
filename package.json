@@ -8,12 +8,12 @@
         "async": "",
         "js-beautify-node": ""
     },
-    "main": "index",
     "engines": {
         "node": "0.4.x"
     },
     "repository": {
         "type": "git",
         "url": "git://github.com/hideo55/shipitjs.git"
-    }
+    },
+    "bin" : { "shipitjs" : "./bin/shipitjs" }
 }

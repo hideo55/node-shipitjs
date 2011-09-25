@@ -3,6 +3,11 @@
 
   Helper utility for npm publish
 
+# Usage
+
+    $ cd /path/to/module
+    $ shipitjs
+
 ## License 
 
 (The MIT License)
