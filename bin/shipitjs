@@ -1,3 +1,23 @@
 #!/usr/bin/env node
 
-require('../lib/ShipItJS').shipIt(process.cwd());
+var opts = require('opts');
+var si = require('../lib/ShipItJS');
+
+opts.parse([
+{
+	long : 'write-config',
+	description : 'Write default configuration file to ./.shipit.json'
+},
+{
+	long : 'verify',
+	description : 'Verify configuration file'
+}
+],true);
+
+if( opts.get('write-config') ){
+	si.writeConfig(process.cwd());
+}else{
+	si.shipItExec(process.cwd(),{
+		verify: opts.get('verify')
+	});
+}
