@@ -1,12 +1,14 @@
 
 # ShipIt.js
 
-  Helper utility for npm publish
+  npm package release management tool
 
 # Usage
 
     $ cd /path/to/module
-    $ shipitjs
+    $ shipitjs --write-config
+    $ shipitjs --verify minor
+    $ shipitjs minor
 
 ## License 
 

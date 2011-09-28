@@ -3,21 +3,32 @@
 var opts = require('opts');
 var si = require('../lib/ShipItJS');
 
-opts.parse([
+var options = [
 {
-	long : 'write-config',
-	description : 'Write default configuration file to ./.shipit.json'
+  long : 'write-config',
+  description : 'Write default configuration file to ./.shipit.json'
 },
 {
-	long : 'verify',
-	description : 'Verify configuration file'
+  long : 'dry-run',
+  description : 'Dry run mode'
 }
-],true);
+];
+
+var arguments = [ {
+  name : "release",
+  required : true
+} ];
+
+opts.parse(options, arguments,true);
 
 if( opts.get('write-config') ){
 	si.writeConfig(process.cwd());
 }else{
-	si.shipItExec(process.cwd(),{
-		verify: opts.get('verify')
-	});
+	si.shipItExec(
+	    process.cwd(),
+	    opts.arg('release'),
+	    {
+	      dryRun: opts.get('dry-run'),
+	    }
+	);
 }
