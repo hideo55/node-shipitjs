@@ -16,7 +16,7 @@ var options = [
 
 var arguments = [ {
   name : "release",
-  required : true
+  required : false
 } ];
 
 opts.parse(options, arguments,true);
