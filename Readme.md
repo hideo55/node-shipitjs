@@ -7,7 +7,7 @@
 
     $ cd /path/to/module
     $ shipitjs --write-config
-    $ shipitjs --verify minor
+    $ shipitjs --dry-run minor
     $ shipitjs minor
 
 ## License 
