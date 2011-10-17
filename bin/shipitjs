@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var opts = require('opts');
-var si = require('../lib/ShipItJS');
+var si = require('../lib/ShipIt');
 
 var options = [
 {
