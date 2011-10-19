@@ -1,7 +1,7 @@
 
 # ShipIt.js
 
-  npm package release management tool
+  NPM package release management tool
 
 # Usage
 

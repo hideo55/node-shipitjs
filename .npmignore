@@ -4,3 +4,4 @@ examples
 *.sock
 .gitignore
 .project
+.shipit.json
