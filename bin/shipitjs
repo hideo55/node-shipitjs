@@ -1,34 +1,25 @@
-#!/usr/bin/env node
-
-var opts = require('opts');
 var si = require('../lib/ShipIt');
+var cmd = require('commander')
+.version(si.version)
+.option('-x,--exec', 'Run command actually(default dry-run mode)', false);
 
-var options = [
-{
-  long : 'write-config',
-  description : 'Write default configuration file to ./.shipit.json'
-},
-{
-  long : 'dry-run',
-  description : 'Dry run mode'
-}
-];
+//Write config
+cmd
+.command('write-config')
+.description('Write default configuration file to ./.shipit.json')
+.action(function() {
+  si.writeConfig(process.cwd());
+});
 
-var arguments = [ {
-  name : "release",
-  required : false
-} ];
 
-opts.parse(options, arguments,true);
+//Release
+cmd
+.command('release [release-type]')
+.description('Release the package to NPM. release-type is [major|minor|patch|build|custom].')
+.action(function(releaseType) {
+  si.shipItExec(process.cwd(), releaseType, {
+    dryRun : (this.exec || true),
+  });
+});
 
-if( opts.get('write-config') ){
-	si.writeConfig(process.cwd());
-}else{
-	si.shipItExec(
-	    process.cwd(),
-	    opts.arg('release'),
-	    {
-	      dryRun: opts.get('dry-run'),
-	    }
-	);
-}
+cmd.parse(process.argv);

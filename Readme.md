@@ -5,10 +5,33 @@
 
 # Usage
 
+    Usage: shipitjs [options] [command]
+    
+    Commands:
+    
+      write-config 
+      Write default configuration file to ./.shipit.json
+      
+      release [release-type]
+      Release the package to NPM. release-type is [major|minor|patch|build|custom].
+    
+    Options:
+    
+      -h, --help     output usage information
+      -v, --version  output the version number
+      -x,--exec      Run command actually(default dry-run mode)
+
+1. Create configuration file.
     $ cd /path/to/module
-    $ shipitjs --write-config
-    $ shipitjs --dry-run minor
-    $ shipitjs minor
+    $ shipitjs write-config
+
+2. Execute release command with Dry-Run mode.
+
+    $ shipitjs release patch
+    
+3. Execute release command actually.
+
+    $ shipitjs -x release patch
 
 ## License 
 

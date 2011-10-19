@@ -1,3 +1,9 @@
+0.0.3 / 2011-10-20
+==================
+
+  * Change command-line options
+  * Dry-Run mode is default.
+
 0.0.2 / 2011-10-19
 ==================
 
