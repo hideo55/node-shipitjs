@@ -22,6 +22,7 @@
       -x,--exec      Run command actually(default dry-run mode)
 
 1. Create configuration file.
+
     $ cd /path/to/module
     $ shipitjs write-config
 
