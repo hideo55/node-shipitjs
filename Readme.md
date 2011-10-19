@@ -21,16 +21,16 @@
       -v, --version  output the version number
       -x,--exec      Run command actually(default dry-run mode)
 
-1. Create configuration file.
+Create configuration file.
 
     $ cd /path/to/module
     $ shipitjs write-config
 
-2. Execute release command with Dry-Run mode.
+Execute release command with Dry-Run mode.
 
     $ shipitjs release patch
     
-3. Execute release command actually.
+Execute release command actually.
 
     $ shipitjs -x release patch
 
