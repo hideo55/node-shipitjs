@@ -19,7 +19,7 @@
     
       -h, --help     output usage information
       -v, --version  output the version number
-      -x,--exec      Run command actually(default dry-run mode)
+      -x,--exec      Run command actually(default Dry-Run mode)
 
 Create configuration file.
 
@@ -33,6 +33,90 @@ Execute release command with Dry-Run mode.
 Execute release command actually.
 
     $ shipitjs -x release patch
+
+## Configuration
+
+ShipItJS can configuration by .shipit.json file.
+
+Default configuration file can created by `shipitjs write-config` command.
+
+Default configuration is like below
+
+    {
+      "Steps": ["FindVersion", "ChangeVersion", "CheckChangeLog", "Commit", "Tag", "Publish"],
+    	"CheckChangeLog": {
+    		"files": ["History.md"]
+    	}
+    }
+
+## Steps
+
+### FindVersion
+
+Find current version form package.json and VCS tag.
+
+### ChangeVersion
+
+Change version number in package.json
+
+### CheckChangeLog
+
+Check ChangeLog file 
+
+#### Option
+
+* files
+
+Please specify the filename of ChangeLog in an array.
+
+    {
+      "Steps": ["FindVersion", "ChangeVersion", "CheckChangeLog", "Commit", "Tag", "Publish"],
+    	"CheckChangeLog": {
+    		"files": ["History.md"]
+    	}
+    }
+
+### Commit
+
+Commit to VCS
+
+### Tag
+
+Tagging the version number to VCS.
+
+### Publish
+
+Publish module to NPM registry.
+
+## VC (Version Control)
+
+ShipItJS currently support only Git.
+
+### Git
+
+#### Option
+
+VC's git support can configuration like below
+
+    {
+      "Git": {
+        "TagPattern": "version-%v",
+        "SignTag": true,
+        "PushTo": "origin master"
+      }
+    }
+
+* PushTo
+
+If you want the new version to be pushed elsewhare, then you can specify the destination in this. 
+
+* TagPattern
+
+If you want tag to be follow specify pattern, then you can specify tag pattern.'%v' is replaced by version string.
+
+* SignTag
+
+Should be set ot truely if you wish tags to be GPG/PGP signed.
 
 ## License 
 
