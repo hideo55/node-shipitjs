@@ -39,11 +39,15 @@ Execute release command actually.
 ShipItJS does semantic version control by `shipitjs release [rerease-type]` command.
 
 The version string must be formatted as following.
+
     0.0.1 (major.minor.patch)
+
 or
+
     0.0.1-1 (major.minor.patch-build)
 
 For example, current version is '0.0.1'.
+
 * Next major version is '1.0.0'
 * Next minor version is '0.1.0'
 * Next patch version is '0.0.2'
