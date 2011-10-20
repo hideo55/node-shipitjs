@@ -36,7 +36,7 @@ Execute release command actually.
 
 ## Semantic Versioning
 
-ShipItJS does semantic version control by `shipitjs release [rerease-type]` command.
+ShipIt.js does semantic version control by `shipitjs release [rerease-type]` command.
 
 The version string must be formatted as follows:
 
