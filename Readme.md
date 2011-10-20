@@ -63,14 +63,11 @@ Change version number in package.json
 
 Check ChangeLog file 
 
-#### Option
-
 * files
 
 Please specify the filename of ChangeLog in an array.
 
     {
-      "Steps": ["FindVersion", "ChangeVersion", "CheckChangeLog", "Commit", "Tag", "Publish"],
     	"CheckChangeLog": {
     		"files": ["History.md"]
     	}
@@ -93,8 +90,6 @@ Publish module to NPM registry.
 ShipItJS currently support only Git.
 
 ### Git
-
-#### Option
 
 VC's git support can configuration like below
 
