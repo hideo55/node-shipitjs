@@ -34,6 +34,23 @@ Execute release command actually.
 
     $ shipitjs -x release patch
 
+## Semantic Versioning
+
+ShipItJS does semantic version control by `shipitjs release [rerease-type]` command.
+
+The version string must be formatted as following.
+    0.0.1 (major.minor.patch)
+or
+    0.0.1-1 (major.minor.patch-build)
+
+For example, current version is '0.0.1'.
+* Next major version is '1.0.0'
+* Next minor version is '0.1.0'
+* Next patch version is '0.0.2'
+* next build version is '0.0.1-1'
+
+See also [Semantic Versioning](http://semver.org/)
+
 ## Configuration
 
 ShipItJS can configuration by .shipit.json file.
@@ -43,7 +60,7 @@ Default configuration file can created by `shipitjs write-config` command.
 Default configuration is like below
 
     {
-      "Steps": ["FindVersion", "ChangeVersion", "CheckChangeLog", "Commit", "Tag", "Publish"],
+      "steps": ["FindVersion", "ChangeVersion", "CheckChangeLog", "Commit", "Tag", "Publish"],
     	"CheckChangeLog": {
     		"files": ["History.md"]
     	}
@@ -53,7 +70,7 @@ Default configuration is like below
 
 ### FindVersion
 
-Find current version form package.json and VCS tag.
+Find current version form package.json and VCS tag, and generate next version string that follow semantic versioning.
 
 ### ChangeVersion
 
