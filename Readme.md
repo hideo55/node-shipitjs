@@ -65,9 +65,9 @@ Default configuration is like below
 
     {
       "steps": ["FindVersion", "ChangeVersion", "CheckChangeLog", "Commit", "Tag", "Publish"],
-    	"CheckChangeLog": {
-    		"files": ["History.md"]
-    	}
+      "CheckChangeLog": {
+        "files": ["History.md"]
+      }
     }
 
 ## Steps
