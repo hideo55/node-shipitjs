@@ -1,7 +1,13 @@
+#!/usr/bin/env node
 var si = require('../lib/ShipIt');
 var cmd = require('commander')
 .version(si.version)
-.option('-x,--exec', 'Run command actually(default dry-run mode)', false);
+.option('-x, --exec', 'Run command actually(default dry-run mode)', false);
+
+//If no arguments then display help.
+if( process.argv.length < 3 ){
+  process.argv.push('--help');
+}
 
 //Write config
 cmd

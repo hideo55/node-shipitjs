@@ -9,7 +9,8 @@
 		"async": "",
 		"underscore": "",
 		"semver": "",
-		"temp": ""
+		"temp": "",
+		"js-beautify-node": ""
 	},
 	"engines": {
 		"node": "0.4.x"

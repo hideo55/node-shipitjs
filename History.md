@@ -1,9 +1,11 @@
 0.0.4 / 2011-10-21
 ==================
+
   * Change command-line interface
   * Fixed bug that git's settings does not reflected
   * Fixed bug that handling 'SignTag'
   * Documentation improved
+
 0.0.3 / 2011-10-20
 ==================
 
