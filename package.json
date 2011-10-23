@@ -1,6 +1,6 @@
 {
 	"name": "ShipItJS",
-	"version": "0.0.4",
+	"version": "0.0.6",
 	"description": "npm package release management tool",
 	"keywords": [],
 	"author": "Hideaki Ohno <hide.o.j55{at}gmail.com>",
