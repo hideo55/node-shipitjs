@@ -23,8 +23,14 @@ cmd
 .command('release [release-type]')
 .description('Release the package to NPM. release-type is [major|minor|patch|build|custom].')
 .action(function(releaseType) {
+  var isExec;
+  if( this.exec === undefined ){
+    isExec = true;
+  }else{
+    isExec = false;
+  }
   si.shipItExec(process.cwd(), releaseType, {
-    dryRun : (this.exec || true),
+    dryRun : isExec,
   });
 });
 
