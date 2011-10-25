@@ -1,3 +1,8 @@
+0.0.8 / 2011-10-25
+==================
+
+  * Remove unnecessary pause()/resume() in CheckChangeLog.js
+
 0.0.7 / 2011-10-25
 ==================
 
