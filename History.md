@@ -1,3 +1,8 @@
+0.0.9 / 2011-10-28
+==================
+
+  * Add feature that update version in the main file
+
 0.0.8 / 2011-10-25
 ==================
 
