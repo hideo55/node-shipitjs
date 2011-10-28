@@ -14,7 +14,7 @@
 	},
 	"main": "lib/ShipIt.js",
 	"engines": {
-		"node": "0.4.x"
+		"node": ">=0.4.x"
 	},
 	"repository": {
 		"type": "git",
