@@ -3,6 +3,15 @@
 
   NPM package release management tool
 
+# Install
+
+    npm install ShipItJS
+
+or
+
+    git clone git://github.com/hideo55/shipitjs.git
+    npm install ./shipitjs
+
 # Usage
 
     Usage: shipitjs [options] [command]
