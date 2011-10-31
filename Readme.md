@@ -3,7 +3,7 @@
 
   NPM package release management tool
 
-# Install
+# Installation
 
     npm install ShipItJS
 
