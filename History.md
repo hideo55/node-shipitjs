@@ -1,3 +1,9 @@
+0.1.0 / 2011-11-02
+==================
+
+  * path.existsSync () fs.readFileSync and () ceased to use
+  * Change version replacement pattern
+
 0.0.9 / 2011-10-28
 ==================
 
