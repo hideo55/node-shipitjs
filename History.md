@@ -3,6 +3,7 @@
 
   * Add rollback feature
   * Add deleteTag() in VC/Git
+  * Add resetRecentCommit() in VC/Git
 
 0.1.0 / 2011-11-02
 ==================
