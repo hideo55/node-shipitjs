@@ -124,10 +124,12 @@ ShipItJS currently support only Git.
 VC's git support can configuration like below
 
     {
-      "Git": {
-        "TagPattern": "version-%v",
-        "SignTag": true,
-        "PushTo": "origin"
+      "vc": {
+        "Git": {
+          "TagPattern": "version-%v",
+          "SignTag": true,
+          "PushTo": "origin"
+        }
       }
     }
 
