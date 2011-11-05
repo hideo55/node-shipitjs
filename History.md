@@ -3,6 +3,7 @@
 
   * Fixed document
   * Fixed bug in Git
+  * Chage git diff target(HEAD => Tag)
 
 0.1.2 / 2011-11-05
 ==================
