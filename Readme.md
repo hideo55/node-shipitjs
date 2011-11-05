@@ -28,7 +28,7 @@ or
     
       -h, --help     output usage information
       -v, --version  output the version number
-      -x,--exec      Run command actually(default Dry-Run mode)
+      -x, --exec      Run command actually(default Dry-Run mode)
 
 Create configuration file.
 
