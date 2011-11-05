@@ -127,7 +127,7 @@ VC's git support can configuration like below
       "Git": {
         "TagPattern": "version-%v",
         "SignTag": true,
-        "PushTo": "origin master"
+        "PushTo": "origin"
       }
     }
 
