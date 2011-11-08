@@ -117,7 +117,7 @@ Publish module to NPM registry.
 
 ## VC (Version Control)
 
-ShipItJS currently support only Git.
+ShipItJS currently support Git and Mercurial.
 
 ### Git
 
@@ -144,6 +144,22 @@ If you want tag to be follow specify pattern, then you can specify tag pattern.'
 * SignTag
 
 Should be set ot truely if you wish tags to be GPG/PGP signed.
+
+### Mercurial
+
+VC's mercurial support can configuration like below
+
+    {
+      "vc": {
+        "Hg": {
+          "PushTo": "remote"
+        }
+      }
+    }
+
+* PushTo
+
+If you want the new version to be pushed elsewhare, then you can specify the destination in this. 
 
 ## License 
 
