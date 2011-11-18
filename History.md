@@ -1,3 +1,8 @@
+0.1.7 / 2011-11-19
+==================
+
+  * Change command interface `write-config` to `init` for simplification
+
 0.1.6 / 2011-11-18
 ==================
 
