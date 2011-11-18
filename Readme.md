@@ -18,8 +18,8 @@ or
     
     Commands:
     
-      write-config 
-      Write default configuration file to ./.shipit.json
+      init 
+      Initialize: write default configuration file to ./.shipit.json
       
       release [release-type]
       Release the package to NPM. release-type is [major|minor|patch|build|custom].
@@ -33,7 +33,7 @@ or
 Create configuration file.
 
     $ cd /path/to/module
-    $ shipitjs write-config
+    $ shipitjs init
 
 Execute release command with Dry-Run mode.
 
@@ -68,7 +68,7 @@ See also [Semantic Versioning](http://semver.org/)
 
 ShipItJS can configuration by .shipit.json file.
 
-Default configuration file can created by `shipitjs write-config` command.
+Default configuration file can created by `shipitjs init` command.
 
 Default configuration is like below
 

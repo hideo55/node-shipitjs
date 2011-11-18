@@ -1,26 +1,26 @@
 {
-	"name": "ShipItJS",
-	"version": "0.1.6",
-	"description": "npm package release management tool",
-	"keywords": ["release management", "npm", "git", "hg"],
-	"author": "Hideaki Ohno <hide.o.j55{at}gmail.com>",
-	"dependencies": {
-		"commander": "",
-		"async": "",
-		"underscore": "",
-		"semver": "",
-		"temp": "",
-		"js-beautify-node": ""
-	},
-	"main": "lib/ShipIt.js",
-	"engines": {
-		"node": ">=0.4.x"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/hideo55/shipitjs.git"
-	},
-	"bin": {
-		"shipitjs": "./bin/shipitjs"
-	}
+  "name": "ShipItJS",
+  "version": "0.1.6",
+  "description": "npm package release management tool",
+  "keywords": ["release management", "npm", "git", "hg"],
+  "author": "Hideaki Ohno <hide.o.j55{at}gmail.com>",
+  "dependencies": {
+    "commander": "",
+    "async": "",
+    "underscore": "",
+    "semver": "",
+    "temp": "",
+    "js-beautify-node": ""
+  },
+  "main": "lib/ShipIt.js",
+  "engines": {
+    "node": ">=0.4.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hideo55/shipitjs.git"
+  },
+  "bin": {
+    "shipitjs": "./bin/shipitjs"
+  }
 }
