@@ -87,7 +87,8 @@ Find current version form package.json and VCS tag, and generate next version st
 
 ### ChangeVersion
 
-Change version number in package.json
+Change version number in package.json and exports.version in main script.
+
 
 ### CheckChangeLog
 
