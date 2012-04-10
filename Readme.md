@@ -3,7 +3,7 @@
 
   NPM package release management tool
 
-# Installation
+## Installation
 
     npm install ShipItJS
 
@@ -12,7 +12,7 @@ or
     git clone git://github.com/hideo55/shipitjs.git
     npm install ./shipitjs
 
-# Usage
+## Usage
 
     Usage: shipitjs [options] [command]
     
