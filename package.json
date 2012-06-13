@@ -1,6 +1,6 @@
 {
   "name": "ShipItJS",
-  "version": "0.1.11",
+  "version": "0.1.10",
   "description": "npm package release management tool",
   "homepage": "http://hideo55.github.com/shipitjs/",
   "keywords": ["release management", "npm", "git", "hg"],
@@ -15,7 +15,7 @@
   },
   "main": "lib/ShipIt.js",
   "engines": {
-    "node": ">=0.7.10"
+    "node": ">=0.4.x"
   },
   "repository": {
     "type": "git",
