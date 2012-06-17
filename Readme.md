@@ -5,7 +5,7 @@
 
 ## Installation
 
-    npm install ShipItJS
+    npm install shipitjs
 
 or
 
