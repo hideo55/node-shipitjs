@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="ShipIt.js : NPM package release management tool" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>ShipIt.js</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/hideo55/shipitjs">View on GitHub</a>
+
+          <h1 id="project_title">ShipIt.js</h1>
+          <h2 id="project_tagline">NPM package release management tool</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/hideo55/shipitjs/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/hideo55/shipitjs/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>ShipIt.js</h1>
+
+<p>NPM package release management tool</p>
+
+<h2>Installation</h2>
+
+<pre><code>npm install shipitjs
+</code></pre>
+
+<p>or</p>
+
+<pre><code>git clone git://github.com/hideo55/shipitjs.git
+npm install ./shipitjs
+</code></pre>
+
+<h2>Usage</h2>
+
+<pre><code>Usage: shipitjs [options] [command]
+
+Commands:
+
+  init 
+  Initialize: write default configuration file to ./.shipit.json
+
+  release [release-type]
+  Release the package to NPM. release-type is [major|minor|patch|build|custom].
+
+Options:
+
+  -h, --help     output usage information
+  -v, --version  output the version number
+  -x, --exec      Run command actually(default Dry-Run mode)
+</code></pre>
+
+<p>Create configuration file.</p>
+
+<pre><code>$ cd /path/to/module
+$ shipitjs init
+</code></pre>
+
+<p>Execute release command with Dry-Run mode.</p>
+
+<pre><code>$ shipitjs release patch
+</code></pre>
+
+<p>Execute release command actually.</p>
+
+<pre><code>$ shipitjs -x release patch
+</code></pre>
+
+<h2>Semantic Versioning</h2>
+
+<p>ShipIt.js does semantic version control by <code>shipitjs release [rerease-type]</code> command.</p>
+
+<p>The version string must be formatted as follows:</p>
+
+<pre><code>0.0.1 (major.minor.patch)
+</code></pre>
+
+<p>or</p>
+
+<pre><code>0.0.1-1 (major.minor.patch-build)
+</code></pre>
+
+<p>For example, if current version is '0.0.1', the next version as follows:</p>
+
+<ul>
+<li>Next major version is '1.0.0'</li>
+<li>Next minor version is '0.1.0'</li>
+<li>Next patch version is '0.0.2'</li>
+<li>Next build version is '0.0.1-1'</li>
+</ul><p>See also <a href="http://semver.org/">Semantic Versioning</a></p>
+
+<h2>Configuration</h2>
+
+<p>ShipItJS can configuration by .shipit.json file.</p>
+
+<p>Default configuration file can created by <code>shipitjs init</code> command.</p>
+
+<p>Default configuration is like below</p>
+
+<pre><code>{
+  "steps": ["FindVersion", "ChangeVersion", "CheckChangeLog", "Commit", "Tag", "Publish"],
+  "CheckChangeLog": {
+    "files": ["History.md"]
+  }
+}
+</code></pre>
+
+<h2>Steps</h2>
+
+<h3>FindVersion</h3>
+
+<p>Find current version form package.json and VCS tag, and generate next version string that follow semantic versioning.</p>
+
+<h3>ChangeVersion</h3>
+
+<p>Change version number in package.json and exports.version in main script.</p>
+
+<h3>CheckChangeLog</h3>
+
+<p>Check ChangeLog file </p>
+
+<ul>
+<li>files</li>
+</ul><p>Please specify the filename of ChangeLog in an array.</p>
+
+<pre><code>{
+    "CheckChangeLog": {
+        "files": ["History.md"]
+    }
+}
+</code></pre>
+
+<h3>Commit</h3>
+
+<p>Commit to VCS</p>
+
+<h3>Tag</h3>
+
+<p>Tagging the version number to VCS.</p>
+
+<h3>Publish</h3>
+
+<p>Publish module to NPM registry.</p>
+
+<h2>VC (Version Control)</h2>
+
+<p>ShipItJS currently support Git and Mercurial.</p>
+
+<h3>Git</h3>
+
+<p>VC's git support can configuration like below</p>
+
+<pre><code>{
+  "vc": {
+    "Git": {
+      "TagPattern": "version-%v",
+      "SignTag": true,
+      "PushTo": "origin"
+    }
+  }
+}
+</code></pre>
+
+<ul>
+<li>PushTo</li>
+</ul><p>If you want the new version to be pushed elsewhare, then you can specify the destination in this. </p>
+
+<ul>
+<li>TagPattern</li>
+</ul><p>If you want tag to be follow specify pattern, then you can specify tag pattern.'%v' is replaced by version string.</p>
+
+<ul>
+<li>SignTag</li>
+</ul><p>Should be set ot truely if you wish tags to be GPG/PGP signed.</p>
+
+<h3>Mercurial</h3>
+
+<p>VC's mercurial support can configuration like below</p>
+
+<pre><code>{
+  "vc": {
+    "Hg": {
+      "PushTo": "remote"
+    }
+  }
+}
+</code></pre>
+
+<ul>
+<li>PushTo</li>
+</ul><p>If you want the new version to be pushed elsewhare, then you can specify the destination in this. </p>
+
+<h2>License</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright (c) 2011 Hideaki Ohno &lt;hide.o.j55{at}gmail.com&gt;</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">ShipIt.js maintained by <a href="https://github.com/hideo55">hideo55</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
