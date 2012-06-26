@@ -1,5 +1,10 @@
+0.1.13 / 2012-06-26
+===================
+
+  * Change dependency module version for node v0.8 support
+
 0.1.12 / 2012-06-17
-==================
+===================
 
   * Change package name
 
