@@ -22,7 +22,7 @@
     "url": "git://github.com/hideo55/shipitjs.git"
   },
   "bugs": {
-  	"url": "https://github.com/hideo55/node-kytea/issues"
+  	"url": "https://github.com/hideo55/shipitjs/issues"
   },
   "bin": {
     "shipitjs": "./bin/shipitjs"
