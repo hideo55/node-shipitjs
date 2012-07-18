@@ -4,7 +4,7 @@
   "description": "npm package release management tool",
   "homepage": "http://hideo55.github.com/shipitjs/",
   "keywords": ["release management", "npm", "git", "hg"],
-  "author": "Hideaki Ohno <hide.o.j55{at}gmail.com>",
+  "author": "Hideaki Ohno <hide.o.j55@gmail.com>",
   "dependencies": {
     "commander": ">=0.6.1",
     "async": "",
@@ -20,6 +20,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/hideo55/shipitjs.git"
+  },
+  "bugs": {
+  	"url": "https://github.com/hideo55/node-kytea/issues"
   },
   "bin": {
     "shipitjs": "./bin/shipitjs"
