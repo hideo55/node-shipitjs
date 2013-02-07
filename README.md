@@ -1,16 +1,15 @@
-
 # ShipIt.js
 
   NPM package release management tool
 
 ## Installation
 
-    npm install shipitjs
+    npm install -g shipitjs
 
 or
 
     git clone git://github.com/hideo55/shipitjs.git
-    npm install ./shipitjs
+    npm install -g ./shipitjs
 
 ## Usage
 
@@ -28,7 +27,7 @@ or
     
       -h, --help     output usage information
       -v, --version  output the version number
-      -x, --exec      Run command actually(default Dry-Run mode)
+      -x, --exec     Run command actually(default Dry-Run mode)
 
 Create configuration file.
 
