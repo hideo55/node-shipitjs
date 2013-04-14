@@ -1,4 +1,9 @@
-0.1.15 ? 2012-07-19
+0.2.0  / 2013-04-15
+===================
+
+  * Support versioning from pacakge.ls (clkao)
+
+0.1.15 / 2012-07-19
 ===================
 
   * Add "bugs" to package.json
