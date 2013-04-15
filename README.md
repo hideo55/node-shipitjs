@@ -91,7 +91,8 @@ Change version number in package.json and exports.version in main script.
 * file
 
 Specify `package.ls` if you are managing package.json with LiveScript.
-`run run prepublish` will also be run after the change is made.  You must also
+
+`npm run prepublish` will also be run after the change is made.  You must also
 specify 'usePackageLS' in global config.
 
 ### CheckChangeLog
