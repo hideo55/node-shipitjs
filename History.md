@@ -1,3 +1,11 @@
+# Revision history for shipitjs
+
+0.2.1  / 2013-04-16
+===================
+
+  * Fixed git repository URL in package.json
+  * Fixed typo in README
+
 0.2.0  / 2013-04-15
 ===================
 

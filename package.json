@@ -1,8 +1,8 @@
 {
   "name": "shipitjs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "npm package release management tool",
-  "homepage": "http://hideo55.github.com/shipitjs/",
+  "homepage": "http://hideo55.github.com/node-shipitjs/",
   "keywords": ["release management", "npm", "git", "hg"],
   "author": "Hideaki Ohno <hide.o.j55@gmail.com>",
   "dependencies": {
@@ -19,10 +19,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hideo55/shipitjs.git"
+    "url": "git://github.com/hideo55/node-shipitjs.git"
   },
   "bugs": {
-  	"url": "https://github.com/hideo55/shipitjs/issues"
+  	"url": "https://github.com/hideo55/node-shipitjs/issues"
   },
   "bin": {
     "shipitjs": "./bin/shipitjs"
