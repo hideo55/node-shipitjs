@@ -1,12 +1,14 @@
 # ShipIt.js
 
-  NPM package release management tool
+A release management tool for NPM packages.
 
 ## Installation
 
+Install latest version directly from NPM repository:
+
     npm install -g shipitjs
 
-or
+or, clone and install from local copy (if you plan on hacking on it):
 
     git clone git://github.com/hideo55/shipitjs.git
     npm install -g ./shipitjs
@@ -14,159 +16,198 @@ or
 ## Usage
 
     Usage: shipitjs [options] [command]
-    
-    Commands:
-    
-      init 
-      Initialize: write default configuration file to ./.shipit.json
-      
-      release [release-type]
-      Release the package to NPM. release-type is [major|minor|patch|build|custom].
-    
-    Options:
-    
-      -h, --help     output usage information
-      -v, --version  output the version number
-      -x, --exec     Run command actually(default Dry-Run mode)
 
-Create configuration file.
+    Commands:
+
+      init                   Write default configuration to `./.shipit.json`.
+      release [release-type] Release the package to NPM, where `release-type`
+                             is [major|minor|patch|build|custom].
+
+    Options:
+
+      -h, --help     output usage information
+      -V, --version  output the version number
+      -x, --exec     Actually run commands (defaults to dry-run)
+
+The `release` command is, by default, run in *dry-run* mode; so, it is easy and
+safe to confirm what will happen.  You must specify the `-x` (or `--exec`)
+option explicitly in order to actually execute the steps.
+
+## Semantic Versioning
+
+[Semantic Versioning][semver] is used for version numbers.  See the [the
+spec][semver] for more detailed information.
+
+Basically, version numbers follow these formats:
+
+ *  `major "." minor "." patch`
+ *  `major "." minor "." patch "-" build`
+
+For example, `0.0.1` and `0.0.1-1` are valid version numbers; however, `x0r3` is
+not.
+
+If, say, the current version number is `0.0.1`, then the next version numbers
+would be:
+
+ *  `1.0.0` for a *major* version bump
+ *  `0.1.0` for a *minor* version bump
+ *  `0.0.2` for a *patch* version bump
+ *  `0.0.1-1` for a *build* version bump
+
+[semver]: http://semver.org/
+
+## Configuration
+
+The config file is named `.shipit.json`.  A default config file can be generated
+with the `init` command:
 
     $ cd /path/to/module
     $ shipitjs init
 
-Execute release command with Dry-Run mode.
+An example config file:
 
-    $ shipitjs release patch
-    
-Execute release command actually.
-
-    $ shipitjs -x release patch
-
-## Semantic Versioning
-
-ShipIt.js does semantic version control by `shipitjs release [rerease-type]` command.
-
-The version string must be formatted as follows:
-
-    0.0.1 (major.minor.patch)
-
-or
-
-    0.0.1-1 (major.minor.patch-build)
-
-For example, if current version is '0.0.1', the next version as follows:
-
-* Next major version is '1.0.0'
-* Next minor version is '0.1.0'
-* Next patch version is '0.0.2'
-* Next build version is '0.0.1-1'
-
-See also [Semantic Versioning](http://semver.org/)
-
-## Configuration
-
-ShipItJS can configuration by .shipit.json file.
-
-Default configuration file can created by `shipitjs init` command.
-
-Default configuration is like below
-
-    {
-      "steps": ["FindVersion", "ChangeVersion", "CheckChangeLog", "Commit", "Tag", "Publish"],
-      "CheckChangeLog": {
-        "files": ["History.md"]
-      }
-    }
+```json
+{
+  "steps": ["FindVersion", "ChangeVersion", "CheckChangeLog", "Commit", "Tag", "Publish"],
+  "CheckChangeLog": {
+    "files": ["History.md"]
+  }
+}
+```
 
 ## Steps
 
 ### FindVersion
 
-Find current version form package.json and VCS tag, and generate next version string that follow semantic versioning.
+Attempts to infer the current version number from VCS tag.  If that fails, then
+the version number in `package.json` (or `package.ls`) is used.  The next
+version number is then calculated (according to Semantic Versioning) and the
+user is prompted for confirmation.
+
+#### Config
+
+None.
 
 ### ChangeVersion
 
-Change version number in package.json and exports.version in main script.
+Changes the version number specified in `package.json` (or `package.ls`).  It
+attempts also to update `exports.version` if a *main* script has been defined.
 
-* file
+#### Config
 
-Specify `package.ls` if you are managing package.json with LiveScript.
-`npm run prepublish` will also be run after the change is made.  You must also
-specify 'usePackageLS' in global config.
+##### file (String)
+
+If you manage your `package.json` with LiveScript, then specify `package.ls`.
+`npm run prepublish` will be executed for you automatically.
+
+**NOTE:** You must also specify a truthy value for the global `usePackageLS`.
+
+```json
+{
+  "usePackageLS": true,
+  "ChangeVersion": {
+    "file": "package.ls"
+  }
+}
+```
 
 ### CheckChangeLog
 
-Check ChangeLog file 
+Checks changelog(s) for entries for the new version number.  Provides option to
+edit changelog (using the current user's `$EDITOR`, defaults to `vim`) if no
+entry was found.
 
-* files
+#### Config
 
-Please specify the filename of ChangeLog in an array.
+##### files (Array)
 
-    {
-    	"CheckChangeLog": {
-    		"files": ["History.md"]
-    	}
-    }
+An array of changelog filenames to check.
+
+```json
+{
+  "CheckChangeLog": {
+    "files": ["History.md"]
+  }
+}
+```
 
 ### Commit
 
-Commit to VCS
+Puts together a commit message with diffs for all changelogs, then commits all
+local changes.
+
+#### Config
+
+None.
 
 ### Tag
 
-Tagging the version number to VCS.
+Makes a tag in the VCS with the new version number.
+
+#### Config
+
+None.
 
 ### Publish
 
-Publish module to NPM registry.
+Publishes module to the NPM registry, asking first for user confirmation.
 
-## VC (Version Control)
+#### Config
 
-ShipItJS currently support Git and Mercurial.
+None.
+
+## Version Control Systems
+
+Currently Git and Mercurial are the only VCS supported.
 
 ### Git
 
-VC's git support can configuration like below
+An example git configuration:
 
-    {
-      "vc": {
-        "Git": {
-          "TagPattern": "version-%v",
-          "SignTag": true,
-          "PushTo": "origin"
-        }
-      }
+```json
+{
+  "vc": {
+    "Git": {
+      "PushTo": "origin",
+      "SignTag": true,
+      "TagPattern": "version-%v"
     }
+  }
+}
+```
 
-* PushTo
+#### PushTo (String)
 
-If you want the new version to be pushed elsewhare, then you can specify the destination in this. 
+Where the new version should be pushed.
 
-* TagPattern
+#### SignTag (Boolean)
 
-If you want tag to be follow specify pattern, then you can specify tag pattern.'%v' is replaced by version string.
+Whether tags should be GPG/PGP signed.
 
-* SignTag
+#### TagPattern (String)
 
-Should be set ot truely if you wish tags to be GPG/PGP signed.
+Custom pattern for tag names (`%v` is replaced by version number).
+
 
 ### Mercurial
 
-VC's mercurial support can configuration like below
+An example mercurial configuration:
 
-    {
-      "vc": {
-        "Hg": {
-          "PushTo": "remote"
-        }
-      }
+```json
+{
+  "vc": {
+    "Hg": {
+      "PushTo": "remote"
     }
+  }
+}
+```
 
-* PushTo
+#### PushTo (String)
 
-If you want the new version to be pushed elsewhare, then you can specify the destination in this. 
+Where the new version should be pushed.
 
-## License 
+## License
 
 (The MIT License)
 
