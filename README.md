@@ -133,12 +133,21 @@ An array of changelog filenames to check.
 
 ### Commit
 
-Puts together a commit message with diffs for all changelogs, then commits all
-local changes.
+Commits all local changes.
 
 #### Config
 
-None.
+##### message (String)
+
+Template for commit message.
+
+```json
+{
+  "Commit": {
+    "message": "Checking in changes prior to tagging version \"{{version}}\".\n\nChangelog diff:\n\n{{changelogDiff}}"
+  }
+}
+```
 
 ### Tag
 
