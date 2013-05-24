@@ -142,11 +142,21 @@ None.
 
 ### Tag
 
-Makes a tag in the VCS with the new version number.
+Makes a tag for the new version.
 
 #### Config
 
-None.
+##### message (String)
+
+Template for tag message.
+
+```json
+{
+  "Tag": {
+    "message": "Tagging version \"{{version}}\" using shipitjs."
+  }
+}
+```
 
 ### Publish
 
