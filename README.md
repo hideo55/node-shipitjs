@@ -133,20 +133,39 @@ An array of changelog filenames to check.
 
 ### Commit
 
-Puts together a commit message with diffs for all changelogs, then commits all
-local changes.
+Commits all local changes.
 
 #### Config
 
-None.
+##### message (String)
+
+Template for commit message.
+
+```json
+{
+  "Commit": {
+    "message": "Checking in changes prior to tagging version \"{{version}}\".\n\nChangelog diff:\n\n{{changelogDiff}}"
+  }
+}
+```
 
 ### Tag
 
-Makes a tag in the VCS with the new version number.
+Makes a tag for the new version.
 
 #### Config
 
-None.
+##### message (String)
+
+Template for tag message.
+
+```json
+{
+  "Tag": {
+    "message": "Tagging version \"{{version}}\" using shipitjs."
+  }
+}
+```
 
 ### Publish
 
