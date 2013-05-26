@@ -1,6 +1,6 @@
 {
   "name": "shipitjs",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "npm package release management tool",
   "homepage": "http://hideo55.github.com/node-shipitjs/",
   "keywords": ["release management", "npm", "git", "hg"],

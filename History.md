@@ -1,5 +1,10 @@
 # Revision history for shipitjs
 
+0.2.3 / 2013-05-27
+==================
+
+  * Add configuration for customize the messages generated in the Tag and Commit steps.
+
 0.2.2 / 2013-05-24
 ==================
 
