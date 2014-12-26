@@ -1,5 +1,10 @@
 # Revision history for shipitjs
 
+0.2.4 / 2014-12-26
+==================
+
+  * Fixed error when release subcommand(issue#7)
+
 0.2.3 / 2013-05-27
 ==================
 
