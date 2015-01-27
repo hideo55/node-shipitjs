@@ -27,5 +27,4 @@
   "bin": {
     "shipitjs": "./bin/shipitjs"
   },
-  "preferGlobal": true
 }
