@@ -6,12 +6,12 @@ A release management tool for NPM packages.
 
 Install latest version directly from NPM repository:
 
-    npm install -g shipitjs
+    npm install shipitjs
 
 or, clone and install from local copy (if you plan on hacking on it):
 
-    git clone git://github.com/hideo55/shipitjs.git
-    npm install -g ./shipitjs
+    git clone git://github.com/hideo55/node-shipitjs.git
+    npm install ./shipitjs
 
 ## Usage
 
