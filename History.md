@@ -1,5 +1,10 @@
 # Revision history for shipitjs
 
+0.2.5 / 2015-01-28
+==================
+
+  * Remove "preferGlobal" from package.json
+
 0.2.4 / 2014-12-26
 ==================
 
