@@ -26,5 +26,5 @@
   },
   "bin": {
     "shipitjs": "./bin/shipitjs"
-  },
+  }
 }
