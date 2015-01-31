@@ -21,7 +21,7 @@ or, clone and install from local copy (if you plan on hacking on it):
 
       init                   Write default configuration to `./.shipit.json`.
       release [release-type] Release the package to NPM, where `release-type`
-                             is [major|minor|patch|build|custom].
+                             is [major|minor|patch|premajor|preminor|prepatch|prerelease|custom].
 
     Options:
 
@@ -52,7 +52,7 @@ would be:
  *  `1.0.0` for a *major* version bump
  *  `0.1.0` for a *minor* version bump
  *  `0.0.2` for a *patch* version bump
- *  `0.0.1-1` for a *build* version bump
+ *  `0.0.2-0` for a *prepatch* version bump
 
 [semver]: http://semver.org/
 
