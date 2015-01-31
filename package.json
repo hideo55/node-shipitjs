@@ -9,7 +9,7 @@
     "commander": ">=0.6.1",
     "async": "",
     "underscore": "",
-    "semver": "",
+    "semver": "~4.2.0",
     "temp": "",
     "js-beautify-node": ""
   },
