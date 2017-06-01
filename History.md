@@ -1,5 +1,10 @@
 # Revision history for shipitjs
 
+0.3.1 / 2017-06-02
+==================
+
+  * Use fs.writeSync instead of fs.write
+
 0.3.0 / 2015-01-31
 ==================
 
